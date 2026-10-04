@@ -149,45 +149,7 @@ export function Accordion({
   );
 }
 
-export function Table({
-  headers,
-  rows,
-  highlightIndex = -1,
-  caption,
-  className = "",
-}: {
-  headers: string[];
-  rows: (React.ReactNode)[][];
-  highlightIndex?: number;
-  caption?: string;
-  className?: string;
-}) {
-  return (
-    <div className={`table-wrap ${className}`.trim()}>
-      <table>
-        {caption && <caption className="visually-hidden">{caption}</caption>}
-        <thead>
-          <tr>
-            {headers.map((h, i) => (
-              <th key={i} scope="col">
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, rIdx) => (
-            <tr key={rIdx} className={highlightIndex === rIdx ? "highlight" : ""}>
-              {row.map((cell, cIdx) => (
-                <td key={cIdx}>{cell}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
+export * from "./Table";
 
 export function PageHero({
   eyebrow,

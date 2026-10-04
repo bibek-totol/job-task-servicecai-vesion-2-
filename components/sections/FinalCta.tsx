@@ -31,11 +31,20 @@ export function FinalCta() {
             ))}
           </ol>
 
-          <BtnRow>
-            <Button href="/contact/book-a-call" variant="mint" arrow>
+          <BtnRow className="cta-btn-row">
+            <Button
+              href="/contact/book-a-call"
+              variant="mint"
+              arrow
+              className="transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_16px_36px_rgba(2,38,44,0.45),0_0_24px_rgba(62,224,188,0.55)] active:translate-y-0 active:scale-100"
+            >
               Book a discovery call
             </Button>
-            <Button href="/contact/request-a-proposal" variant="ghost">
+            <Button
+              href="/contact/request-a-proposal"
+              variant="ghost"
+              className="transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.03] hover:shadow-[0_16px_34px_rgba(2,38,44,0.22),0_0_22px_rgba(255,255,255,0.9)] active:translate-y-0 active:scale-100"
+            >
               Request a proposal
             </Button>
           </BtnRow>

@@ -199,10 +199,10 @@ export function Header() {
           {/* Brand Logo */}
           <Link href="/" className="brand" aria-label="Servicechai home">
             <Image
-              src="/assets/img/logo-wordmark-white.png"
+              src="/assets/img/sc logo.svg"
               alt="Servicechai — experience reimagined"
-              width={986}
-              height={243}
+              width={50}
+              height={50}
               priority
             />
           </Link>
@@ -278,9 +278,8 @@ export function Header() {
 
                 <div
                   id="menu-industries"
-                  className={`mega mega-single ${
-                    activeMenu === "industries" ? "is-open" : ""
-                  }`}
+                  className={`mega mega-single ${activeMenu === "industries" ? "is-open" : ""
+                    }`}
                 >
                   <ul className="mega-list two-col">
                     {INDUSTRIES.map((item) => (
@@ -342,9 +341,8 @@ export function Header() {
 
                 <div
                   id="menu-about"
-                  className={`mega mega-narrow ${
-                    activeMenu === "about" ? "is-open" : ""
-                  }`}
+                  className={`mega mega-narrow ${activeMenu === "about" ? "is-open" : ""
+                    }`}
                 >
                   <ul className="mega-list">
                     {ABOUT_ITEMS.map((item) => (

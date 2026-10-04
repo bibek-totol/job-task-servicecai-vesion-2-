@@ -378,8 +378,8 @@ div.todo {
 }
 
 .link-arrow:hover,
-.tint > * > .link-arrow:hover,
-.grid > * > .link-arrow:hover {
+.tint>*>.link-arrow:hover,
+.grid>*>.link-arrow:hover {
   color: var(--white) !important;
 }
 
@@ -429,7 +429,7 @@ div.todo {
 }
 
 .brand img {
-  height: 40px;
+  height: 55px;
   width: auto;
 }
 

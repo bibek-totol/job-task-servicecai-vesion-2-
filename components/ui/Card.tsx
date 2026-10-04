@@ -7,7 +7,7 @@ export interface CardProps {
   title: React.ReactNode;
   text?: React.ReactNode;
   iconName?: IconName;
-  link?: { label: string; href: string };
+  link?: { label: string; href: string; className?: string };
   variant?: "default" | "ground" | "petrol" | "mint" | "dark" | "soft" | "dashed" | "white";
   kicker?: string;
   headingTag?: "h2" | "h3" | "h4";
@@ -48,7 +48,7 @@ export function Card({
       {extra}
 
       {link && (
-        <LinkArrow href={link.href} className="mt-auto pt-2">
+        <LinkArrow href={link.href} className={`mt-auto pt-2 ${link.className || ""}`.trim()}>
           {link.label}
         </LinkArrow>
       )}

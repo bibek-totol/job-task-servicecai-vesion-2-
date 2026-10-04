@@ -368,12 +368,19 @@ div.todo {
   font-weight: 700;
   font-size: 15px;
   color: var(--mint);
+  transition: color .15s ease;
 }
 
 .link-arrow svg {
   width: 16px;
   height: 16px;
   transition: transform .15s ease;
+}
+
+.link-arrow:hover,
+.tint > * > .link-arrow:hover,
+.grid > * > .link-arrow:hover {
+  color: var(--white) !important;
 }
 
 .link-arrow:hover svg {

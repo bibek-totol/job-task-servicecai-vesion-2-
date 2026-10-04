@@ -50,24 +50,33 @@ const SOLUTIONS: SolutionItem[] = [
 
 export function SolutionsSection() {
   return (
-    <section className="section section-ground" id="solutions">
+    <section
+      className="section section-ground [&_.link-arrow:hover]:!text-white [&_.link-arrow]:transition-colors"
+      id="solutions"
+    >
       <div className="container">
         <div className="section-head row">
           <div className="title">
             <p className="eyebrow sky">What we run for you</p>
             <h2>Five ways to scale CX</h2>
           </div>
-          <LinkArrow href="/solutions">All solutions</LinkArrow>
+          <LinkArrow href="/solutions" className="hover:!text-white transition-colors">
+            All solutions
+          </LinkArrow>
         </div>
 
-        <div className="services-grid tint">
+        <div className="services-grid tint [&_.link-arrow:hover]:!text-white">
           {SOLUTIONS.map((s, idx) => (
             <Card
               key={idx}
               title={s.title}
               text={s.desc}
               iconName={s.icon}
-              link={{ label: s.linkText, href: s.href }}
+              link={{
+                label: s.linkText,
+                href: s.href,
+                className: "hover:!text-white transition-colors",
+              }}
             />
           ))}
         </div>

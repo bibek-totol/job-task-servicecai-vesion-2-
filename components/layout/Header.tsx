@@ -16,27 +16,27 @@ const SOLUTIONS: NavSubItem[] = [
   {
     title: "Omnichannel CX management",
     desc: "Voice, chat, email, social and messaging, run by one team.",
-    href: "/solutions/omnichannel-cx",
+    href: "/solutions#omnichannel-cx",
   },
   {
     title: "Agentic AI voice & chat",
     desc: "AI agents in 75 languages, with warm hand-off to a human.",
-    href: "/solutions/agentic-ai",
+    href: "/solutions#agentic-ai",
   },
   {
     title: "Back office & BPM",
     desc: "KYC, provisioning, moderation, finance and HR operations.",
-    href: "/solutions/back-office-bpm",
+    href: "/solutions#back-office-bpm",
   },
   {
     title: "Global capability centres",
     desc: "Your own strategic hub in Bangladesh.",
-    href: "/solutions/global-capability-centres",
+    href: "/solutions#global-capability-centres",
   },
   {
     title: "CX consulting & analytics",
     desc: "Voice of customer, contact reduction and process redesign.",
-    href: "/solutions/cx-consulting-analytics",
+    href: "/solutions#cx-consulting-analytics",
   },
 ];
 
@@ -44,37 +44,37 @@ const INDUSTRIES: NavSubItem[] = [
   {
     title: "Telecom",
     desc: "Care, provisioning, retention and win-back.",
-    href: "/industries/telecom",
+    href: "/industries#telecom",
   },
   {
     title: "Banking & financial services",
     desc: "Account servicing, KYC and collections support.",
-    href: "/industries/banking-financial-services",
+    href: "/industries#banking-financial-services",
   },
   {
     title: "Insurance",
     desc: "Policy servicing, claims intake and renewals.",
-    href: "/industries/insurance",
+    href: "/industries#insurance",
   },
   {
     title: "Microfinance",
     desc: "Borrower helplines, KYC and repayment reminders.",
-    href: "/industries/microfinance",
+    href: "/industries#microfinance",
   },
   {
     title: "Agri-tech",
     desc: "Farmer helplines, orders and advisory calling.",
-    href: "/industries/agri-tech",
+    href: "/industries#agri-tech",
   },
   {
     title: "Ed-tech",
     desc: "Learner onboarding, support and enrolment.",
-    href: "/industries/ed-tech",
+    href: "/industries#ed-tech",
   },
   {
     title: "E-commerce",
     desc: "Order support, returns and seller operations.",
-    href: "/industries/e-commerce",
+    href: "/industries#e-commerce",
   },
 ];
 
@@ -82,7 +82,7 @@ const ABOUT_ITEMS: NavSubItem[] = [
   {
     title: "Our story",
     desc: "Who we are and how we work.",
-    href: "/about",
+    href: "/about#story",
   },
   {
     title: "Leadership",
@@ -185,6 +185,22 @@ export function Header() {
     setActiveMenu(activeMenu === menuName ? null : menuName);
   };
 
+  const handleNavClick = (href: string) => {
+    setActiveMenu(null);
+    setMobileOpen(false);
+    if (href.includes("#")) {
+      const [targetPath, hash] = href.split("#");
+      if (pathname === targetPath || (targetPath === "" && hash)) {
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 50);
+      }
+    }
+  };
+
   return (
     <>
       <a className="skip-link" href="#main">
@@ -197,7 +213,7 @@ export function Header() {
       >
         <div className="container header-inner">
           {/* Brand Logo */}
-          <Link href="/" className="brand" aria-label="Servicechai home">
+          <Link href="/" className="brand" aria-label="Servicechai home" onClick={() => handleNavClick("/")}>
             <Image
               src="/assets/img/sc logo.svg"
               alt="Servicechai — experience reimagined"
@@ -234,7 +250,7 @@ export function Header() {
                   <ul className="mega-list">
                     {SOLUTIONS.map((item) => (
                       <li key={item.href}>
-                        <Link href={item.href}>
+                        <Link href={item.href} onClick={() => handleNavClick(item.href)}>
                           <strong>{item.title}</strong>
                           <span>{item.desc}</span>
                         </Link>
@@ -245,13 +261,13 @@ export function Header() {
                   <div className="mega-side">
                     <strong>New to offshore CX?</strong>
                     <p>Start with one queue and ninety days.</p>
-                    <Link href="/why-bangladesh#transition">
+                    <Link href="/why-bangladesh#transition" onClick={() => handleNavClick("/why-bangladesh#transition")}>
                       See how a pilot works →
                     </Link>
                   </div>
 
                   <div className="mega-foot">
-                    <Link className="link-arrow" href="/solutions">
+                    <Link className="link-arrow" href="/solutions" onClick={() => handleNavClick("/solutions")}>
                       All solutions
                       <Icon name="arrow" size={16} strokeWidth={2} />
                     </Link>
@@ -284,7 +300,7 @@ export function Header() {
                   <ul className="mega-list two-col">
                     {INDUSTRIES.map((item) => (
                       <li key={item.href}>
-                        <Link href={item.href}>
+                        <Link href={item.href} onClick={() => handleNavClick(item.href)}>
                           <strong>{item.title}</strong>
                           <span>{item.desc}</span>
                         </Link>
@@ -293,7 +309,7 @@ export function Header() {
                   </ul>
 
                   <div className="mega-foot">
-                    <Link className="link-arrow" href="/contact">
+                    <Link className="link-arrow" href="/contact" onClick={() => handleNavClick("/contact")}>
                       Don’t see your industry? Talk to us
                       <Icon name="arrow" size={16} strokeWidth={2} />
                     </Link>
@@ -307,6 +323,7 @@ export function Header() {
                   href="/why-bangladesh"
                   className="nav-link"
                   aria-current={pathname === "/why-bangladesh" ? "page" : undefined}
+                  onClick={() => handleNavClick("/why-bangladesh")}
                 >
                   Why Bangladesh
                 </Link>
@@ -317,6 +334,7 @@ export function Header() {
                   href="/solutions/agentic-ai"
                   className="nav-link"
                   aria-current={pathname === "/solutions/agentic-ai" ? "page" : undefined}
+                  onClick={() => handleNavClick("/solutions/agentic-ai")}
                 >
                   Agentic AI
                 </Link>
@@ -347,7 +365,7 @@ export function Header() {
                   <ul className="mega-list">
                     {ABOUT_ITEMS.map((item) => (
                       <li key={item.href}>
-                        <Link href={item.href}>
+                        <Link href={item.href} onClick={() => handleNavClick(item.href)}>
                           <strong>{item.title}</strong>
                           <span>{item.desc}</span>
                         </Link>
@@ -362,6 +380,7 @@ export function Header() {
                   href="/careers"
                   className="nav-link"
                   aria-current={pathname === "/careers" ? "page" : undefined}
+                  onClick={() => handleNavClick("/careers")}
                 >
                   Careers
                 </Link>
@@ -372,13 +391,14 @@ export function Header() {
                   href="/investors"
                   className="nav-link"
                   aria-current={pathname === "/investors" ? "page" : undefined}
+                  onClick={() => handleNavClick("/investors")}
                 >
                   Investors
                 </Link>
               </li>
 
               <li className="mobile-only mobile-cta">
-                <Link className="btn btn-mint" href="/contact/book-a-call">
+                <Link className="btn btn-mint" href="/contact/book-a-call" onClick={() => handleNavClick("/contact/book-a-call")}>
                   Book a call
                 </Link>
               </li>
@@ -391,11 +411,12 @@ export function Header() {
               href="/investors"
               className="nav-link"
               aria-current={pathname === "/investors" ? "page" : undefined}
+              onClick={() => handleNavClick("/investors")}
             >
               Investors
             </Link>
 
-            <Link className="btn btn-mint btn-sm" href="/contact/book-a-call">
+            <Link className="btn btn-mint btn-sm" href="/contact/book-a-call" onClick={() => handleNavClick("/contact/book-a-call")}>
               Book a call
             </Link>
 

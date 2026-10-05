@@ -8,7 +8,9 @@ import {
   Button,
   Todo,
   CtaBand,
+  CheckList,
 } from "@/components/ui";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "CX, AI & BPM Solutions | Servicechai",
@@ -16,36 +18,105 @@ export const metadata: Metadata = {
     "Omnichannel customer care, agentic AI, back office, global capability centres and CX consulting — one partner, delivered from Bangladesh.",
 };
 
-const SERVICES = [
+const CHANNELS = [
+  { title: "Voice", text: "Inbound and outbound, predictive dialler, IVR-integrated.", icon: "headset" as const },
+  { title: "Chat", text: "In-app, web and messaging, with managed concurrency.", icon: "chat" as const },
+  { title: "Email", text: "Templated and free-form, tracked against SLA.", icon: "mail" as const },
+  { title: "Social", text: "Facebook, Instagram, X and review platforms.", icon: "share" as const },
+  { title: "Back office", text: "Verification, moderation, data and finance tasks.", icon: "layers" as const },
   {
-    title: "Omnichannel CX management",
-    desc: "Inbound and outbound voice, chat, email, social and messaging — one team, one knowledge base and one quality standard behind every channel.",
-    iconName: "headset" as const,
-    link: { label: "Explore CX management", href: "/solutions/omnichannel-cx" },
+    title: "Bot + human",
+    text: "Agentic AI takes first contact and hands off warm.",
+    icon: "sparkle" as const,
+    link: { label: "See agentic AI", href: "#agentic-ai" },
+  },
+];
+
+const OMNI_CHECKLIST = [
+  "Inbound customer care and complaint close-looping",
+  "Outbound telemarketing, retention and win-back campaigns",
+  "Lifecycle management — onboarding, activation and renewal",
+  "Voice-of-customer surveys and feedback capture",
+  "COPC-compliant operations with 100% feedback on audited transactions",
+];
+
+const AI_FEATURES = [
+  {
+    icon: "mic" as const,
+    title: "Built for real accents",
+    desc: "Reliable speech recognition across accents, dialects and poor mobile lines.",
   },
   {
-    title: "Agentic AI voice & chat",
-    desc: "Humanised AI agents take first contact on high-volume intents in 75 languages, then hand off warm to a trained human on the same session.",
-    iconName: "sparkle" as const,
-    link: { label: "Explore agentic AI", href: "/solutions/agentic-ai" },
+    icon: "target" as const,
+    title: "Understands intent",
+    desc: "Reads intent across the whole journey: a natural conversation, not a menu tree.",
   },
   {
-    title: "Back office & BPM",
-    desc: "KYC and document verification, provisioning, content moderation, finance, payroll and RPA — run to SLA and audited to your standard.",
-    iconName: "layers" as const,
-    link: { label: "Explore back office", href: "/solutions/back-office-bpm" },
+    icon: "languages" as const,
+    title: "75 languages",
+    desc: "One voice and chat platform for every market you serve. Add a language without re-staffing.",
   },
   {
-    title: "Global capability centres",
-    desc: "Your own strategic hub in Bangladesh for customer service, IT, finance or analytics — built on local talent and designed to grow from cost centre to innovation engine.",
-    iconName: "globe" as const,
-    link: { label: "Explore GCC services", href: "/solutions/global-capability-centres" },
+    icon: "swap" as const,
+    title: "Acts, not just answers",
+    desc: "Looks up accounts, books appointments, chases documents and captures customer feedback.",
+  },
+];
+
+const BPM_CAPABILITIES = [
+  {
+    icon: "shield" as const,
+    title: "KYC & Document Verification",
+    desc: "ID validation, address verification, credit checks and anti-fraud document auditing run to tight SLAs.",
   },
   {
-    title: "CX consulting & analytics",
-    desc: "Voice-of-customer analytics, contact-reduction programmes, training and process re-engineering that bring cost per contact down over time.",
-    iconName: "chart" as const,
-    link: { label: "Explore consulting", href: "/solutions/cx-consulting-analytics" },
+    icon: "search" as const,
+    title: "Content & Trust Moderation",
+    desc: "User-generated content, e-commerce listings, profile reviews and community guidelines enforcement.",
+  },
+  {
+    icon: "bank" as const,
+    title: "Finance & Payroll Operations",
+    desc: "Accounts payable, invoicing reconciliations, chargeback investigations and vendor disbursements.",
+  },
+  {
+    icon: "layers" as const,
+    title: "Data Annotation & RPA",
+    desc: "Structured tagging for ML pipelines and robotic process automation for repetitive manual data entry.",
+  },
+];
+
+const GCC_MODELS = [
+  {
+    title: "Incubator / BOT Model",
+    desc: "Build-Operate-Transfer: We build and operate your centre, transferring equity when your scale is proven.",
+  },
+  {
+    title: "Managed Captive Centre",
+    desc: "Your dedicated, physically segregated facility and team, with Servicechai managing day-to-day HR, IT and facilities.",
+  },
+  {
+    title: "Shared GCC Pods",
+    desc: "Fitted-out seats held ready in Dhaka or Chattogram for rapid ramps with zero upfront infrastructure capital.",
+  },
+];
+
+const CONSULTING_PILLARS = [
+  {
+    title: "Voice-of-Customer Analytics",
+    desc: "Root-cause diagnostics that isolate friction points and contact drivers across customer journeys.",
+  },
+  {
+    title: "Contact Reduction Programmes",
+    desc: "Deflect avoidable calls and chats through upstream fixes, improved self-service and product feedback.",
+  },
+  {
+    title: "Six Sigma Quality Calibration",
+    desc: "Audits, coaching frameworks and joint calibration that raise First Contact Resolution (FCR).",
+  },
+  {
+    title: "Knowledge Base Engineering",
+    desc: "Single source of truth architecture that powers both human agent scripting and AI agent prompts.",
   },
 ];
 
@@ -105,23 +176,117 @@ export default function SolutionsHubPage() {
         ]}
       />
 
-      {/* Services Section */}
-      <section className="section section-white">
+      {/* Quick Jump Bar */}
+      <nav
+        aria-label="Solutions navigation"
+        className="section-ground border-b border-[var(--line)] py-3 sticky top-[var(--header-h)] z-20 backdrop-blur-md bg-[rgba(17,33,54,0.92)] shadow-sm"
+      >
+        <div className="container flex flex-wrap items-center justify-between gap-3">
+          <span className="text-xs uppercase tracking-wider font-semibold text-[var(--muted)]">
+            Jump to section:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            <a
+              href="#omnichannel-cx"
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
+            >
+              Omnichannel CX
+            </a>
+            <a
+              href="#agentic-ai"
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
+            >
+              Agentic AI
+            </a>
+            <a
+              href="#back-office-bpm"
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
+            >
+              Back Office & BPM
+            </a>
+            <a
+              href="#global-capability-centres"
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
+            >
+              Global Capability Centres
+            </a>
+            <a
+              href="#cx-consulting-analytics"
+              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
+            >
+              CX Consulting
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Section 1: Omnichannel CX */}
+      <section id="omnichannel-cx" className="section section-white">
         <div className="container">
           <SectionHead
-            eyebrow="Our services"
-            title="Five services, one operating standard"
+            eyebrow="Omnichannel CX management"
+            title="Every channel. One team. One standard."
+            lede="Inbound and outbound voice, chat, email, social and messaging: one team, one knowledge base and one quality standard behind every channel."
           />
 
-          <div className="services-grid tint">
-            {SERVICES.map((s) => (
+          <div className="grid grid-3 mt-12">
+            {CHANNELS.map((ch) => (
               <Card
-                key={s.title}
-                title={s.title}
-                text={s.desc}
-                iconName={s.iconName}
-                link={s.link}
+                key={ch.title}
+                title={ch.title}
+                text={ch.text}
+                iconName={ch.icon}
+                link={ch.link}
               />
+            ))}
+          </div>
+
+          <div className="split mt-32" style={{ alignItems: "start" }}>
+            <div className="stack" style={{ gap: "16px" }}>
+              <h3 className="h3" style={{ fontSize: "22px" }}>
+                What we run across every queue
+              </h3>
+              <CheckList items={OMNI_CHECKLIST} />
+            </div>
+
+            <div className="card card-petrol" style={{ gap: "20px" }}>
+              <p className="eyebrow sky">Explore deep-dive vertical</p>
+              <h3>Explore Omnichannel CX</h3>
+              <p>
+                Learn how our Dhaka and Chattogram delivery centres run 24×7×365
+                with ~10% attrition and COPC-compliant standards.
+              </p>
+              <div className="btn-row" style={{ marginTop: "auto" }}>
+                <Button href="/solutions/omnichannel-cx" variant="mint" size="sm" arrow>
+                  Explore CX management
+                </Button>
+                <Button href="/contact/book-a-call" variant="ghost" size="sm">
+                  Book a discovery call
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Agentic AI */}
+      <section id="agentic-ai" className="section section-ground">
+        <div className="container">
+          <SectionHead
+            eyebrow="Agentic AI voice &amp; chat"
+            title="AI-augmented, not AI-only"
+            lede="Our humanised AI agents answer first on high-volume, repetitive intents in 75 languages, and hand over to a trained human the moment a conversation needs judgement. Full context travels with the customer."
+          />
+
+          <div className="grid grid-4 mt-12">
+            {AI_FEATURES.map((f) => (
+              <div key={f.title} className="card">
+                <div className="icon-tile">
+                  <Icon name={f.icon} size={28} />
+                </div>
+                <h3>{f.title}</h3>
+                <p>{f.desc}</p>
+              </div>
             ))}
           </div>
 
@@ -136,25 +301,192 @@ export default function SolutionsHubPage() {
             }}
           >
             <div>
-              <h3>Not sure where to start?</h3>
-              <p>Tell us your volumes and channels. We’ll recommend the first queue to pilot.</p>
+              <h3>Want to hear an AI voice agent handling live calls?</h3>
+              <p>
+                We can demonstrate speech recognition across accents and smooth
+                hand-offs into live human queues.
+              </p>
             </div>
-            <Button href="/contact" variant="mint" arrow>
-              Talk to our team
-            </Button>
+            <div className="btn-row">
+              <Button href="/solutions/agentic-ai/demo" variant="mint" arrow>
+                Book an AI demo
+              </Button>
+              <Button href="/solutions/agentic-ai" variant="ghost">
+                Explore agentic AI
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Back Office & BPM */}
+      <section id="back-office-bpm" className="section section-white">
+        <div className="container">
+          <SectionHead
+            eyebrow="Back office &amp; BPM"
+            title="SLA-governed operational processing &amp; verification"
+            lede="KYC and document verification, provisioning, content moderation, finance, payroll and RPA — run to SLA and audited to your standard."
+          />
+
+          <div className="grid grid-4 mt-12">
+            {BPM_CAPABILITIES.map((bpm) => (
+              <div key={bpm.title} className="card">
+                <div className="icon-tile">
+                  <Icon name={bpm.icon} size={28} />
+                </div>
+                <h3>{bpm.title}</h3>
+                <p>{bpm.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="split mt-32" style={{ alignItems: "start" }}>
+            <div className="stack" style={{ gap: "16px" }}>
+              <h3 className="h3" style={{ fontSize: "22px" }}>
+                Audited controls &amp; compliance
+              </h3>
+              <CheckList
+                items={[
+                  "Client-approved background checks for all analysts",
+                  "Named-user audit trails and segregated floor environments",
+                  "ISO 9001:2015-certified quality management system",
+                  "Data retention and purge schedules to your exact specification",
+                ]}
+              />
+            </div>
+
+            <div className="card card-ground" style={{ gap: "18px" }}>
+              <p className="eyebrow amber">Dedicated or shared</p>
+              <h3>Flexible BPM Operating Models</h3>
+              <p>
+                Whether you need a 10-person KYC verification pod or a 100-seat
+                back-office operation, ramp in weeks with fitted-out capacity.
+              </p>
+              <div className="btn-row" style={{ marginTop: "auto" }}>
+                <Button href="/solutions/back-office-bpm" variant="mint" size="sm" arrow>
+                  Explore back office
+                </Button>
+                <Button href="/contact/request-a-proposal" variant="ghost" size="sm">
+                  Request a proposal
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Global Capability Centres */}
+      <section id="global-capability-centres" className="section section-ground">
+        <div className="container">
+          <SectionHead
+            eyebrow="Global capability centres"
+            title="Your own strategic hub in Bangladesh"
+            lede="Build your strategic hub in Dhaka or Chattogram for customer service, IT, finance or analytics, backed by local talent, infrastructure and experienced operational leadership."
+          />
+
+          <div className="grid grid-3 mt-12">
+            {GCC_MODELS.map((model) => (
+              <article key={model.title} className="card">
+                <div className="icon-tile">
+                  <Icon name="globe" size={28} />
+                </div>
+                <h3>{model.title}</h3>
+                <p>{model.desc}</p>
+              </article>
+            ))}
+          </div>
+
+          <div
+            className="card card-petrol mt-24"
+            style={{
+              flexDirection: "row",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "24px",
+            }}
+          >
+            <div>
+              <h3>Tour our geo-redundant delivery centres</h3>
+              <p>
+                30,000 sq ft across Dhaka (Tejgaon) and Chattogram (Agrabad) with
+                fitted-out seats ready for your team.
+              </p>
+            </div>
+            <div className="btn-row">
+              <Button href="/contact/site-visit" variant="mint" arrow>
+                Book a site visit
+              </Button>
+              <Button href="/solutions/global-capability-centres" variant="ghost">
+                Explore GCC services
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: CX Consulting & Analytics */}
+      <section id="cx-consulting-analytics" className="section section-white">
+        <div className="container">
+          <SectionHead
+            eyebrow="CX consulting &amp; analytics"
+            title="Bring cost per contact down over time"
+            lede="Voice-of-customer analytics, contact-reduction programmes, training and process re-engineering that bring cost per contact down over time."
+          />
+
+          <div className="grid grid-4 mt-12">
+            {CONSULTING_PILLARS.map((pillar) => (
+              <div key={pillar.title} className="card">
+                <div className="icon-tile">
+                  <Icon name="chart" size={28} />
+                </div>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="split mt-32" style={{ alignItems: "center" }}>
+            <div className="stack" style={{ gap: "16px" }}>
+              <h3 className="h3" style={{ fontSize: "22px" }}>
+                Continuous efficiency improvements
+              </h3>
+              <p className="lede">
+                We believe the best contact is the one that never had to happen.
+                Our analytics leads work with your product and digital teams to
+                eliminate repeat drivers and reduce cost per customer.
+              </p>
+            </div>
+
+            <div className="card card-ground" style={{ gap: "16px" }}>
+              <p className="eyebrow sky">Start with discovery</p>
+              <h3>Review your contact drivers</h3>
+              <p>
+                Share your volume trends and top 5 inquiry reasons. We will
+                return an analysis showing potential automation and deflection.
+              </p>
+              <div className="btn-row" style={{ marginTop: "auto" }}>
+                <Button href="/solutions/cx-consulting-analytics" variant="mint" size="sm" arrow>
+                  Explore consulting
+                </Button>
+                <Button href="/contact/book-a-call" variant="ghost" size="sm">
+                  Book a discovery call
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Operating Layer */}
-      <section className="section section-ground">
+      <section id="operating-layer" className="section section-ground">
         <div className="container">
           <SectionHead
             eyebrow="Wrapped around every queue"
             title="The operating layer behind every service"
             single
           />
-          <div className="grid grid-4">
+          <div className="grid grid-4 mt-12">
             {OPERATING_LAYER.map((op) => (
               <Card
                 key={op.title}
@@ -168,7 +500,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* Ways to Work with Us */}
-      <section className="section section-white">
+      <section id="ways-to-work" className="section section-white">
         <div className="container">
           <SectionHead
             eyebrow="Ways to work with us"

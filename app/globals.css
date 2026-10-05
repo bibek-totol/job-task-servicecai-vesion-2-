@@ -657,6 +657,10 @@ div.todo {
   --ring: var(--bg);
 }
 
+section[id] {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
 .section-ground {
   background: var(--bg);
   --ring: var(--bg);
@@ -1099,6 +1103,8 @@ a.card:hover {
   border-radius: 28px;
   padding: 48px 48px 44px;
   box-shadow: 0 30px 60px rgba(4, 10, 20, .35);
+  border: 1px solid var(--line-2);
+  margin-top: -100px;
 }
 
 .fts-head {
@@ -2063,6 +2069,7 @@ a.card:hover {
   display: flex;
   flex-direction: column;
   box-shadow: 0 30px 60px rgba(4, 10, 20, .3);
+  margin-top: -100px;
 }
 
 .convo-head {

@@ -1,6 +1,11 @@
 import React from "react";
-import { Button, Feature, Convo } from "@/components/ui";
+import dynamic from "next/dynamic";
+import { Button, Feature } from "@/components/ui";
 import { IconName } from "@/components/icons";
+
+const Convo = dynamic(() => import("@/components/ui/Convo").then((mod) => mod.Convo), {
+  ssr: true,
+});
 
 const AI_FEATURES: { icon: IconName; title: string; desc: string }[] = [
   {

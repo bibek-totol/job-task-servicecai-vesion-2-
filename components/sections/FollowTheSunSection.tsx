@@ -1,5 +1,10 @@
 import React from "react";
-import { FollowTheSun } from "@/components/ui/FollowTheSun";
+import dynamic from "next/dynamic";
+
+const FollowTheSun = dynamic(
+  () => import("@/components/ui/FollowTheSun").then((mod) => mod.FollowTheSun),
+  { ssr: true }
+);
 
 export function FollowTheSunSection() {
   return (

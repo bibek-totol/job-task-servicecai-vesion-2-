@@ -1057,6 +1057,8 @@ a.card:hover {
   padding: 54px 0 112px;
   background: var(--glow), var(--bg);
   text-align: center;
+  min-height: 70vh;
+
 }
 
 .home-hero .hero-copy {

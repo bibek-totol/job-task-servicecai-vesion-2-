@@ -1,5 +1,5 @@
 import React from "react";
-import { FollowTheSun, Counter } from "@/components/ui";
+import { Counter } from "@/components/ui";
 import { Icon } from "@/components/icons";
 
 const STAT_ITEMS = [
@@ -13,7 +13,7 @@ const CERTS = ["ISO 9001:2015", "COPC compliant", "Six Sigma certified", "SBTi a
 
 export function Stats() {
   return (
-    <section className="section section-ground" style={{ paddingTop: 0 }} id="coverage">
+    <section className="section section-ground" style={{ paddingTop: 0, paddingBottom: 0 }} id="stats">
       <div className="container">
         <ul className="stat-cards" aria-label="Servicechai at a glance">
           {STAT_ITEMS.map((item, idx) => (
@@ -32,8 +32,6 @@ export function Stats() {
             ))}
           </li>
         </ul>
-
-        <FollowTheSun />
       </div>
     </section>
   );

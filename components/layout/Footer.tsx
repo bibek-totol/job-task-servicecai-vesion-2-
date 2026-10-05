@@ -101,7 +101,7 @@ export function Footer() {
               </p>
               <p>
                 <strong>Chattogram delivery centre</strong>
-                Levels 15 &amp; 16, SF Tower, 2 Agrabad C/A, Chattogram
+                Level 15 &amp; 16, SF Tower, 2 Agrabad C/A, Chattogram
               </p>
               <p>
                 <a href="mailto:info@servicechai.com">info@servicechai.com</a>

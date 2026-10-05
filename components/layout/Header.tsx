@@ -115,8 +115,15 @@ export function Header() {
   const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 8);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 8);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -143,16 +150,19 @@ export function Header() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Click outside listener
+  // Click outside listener - only attached when a menu or mobile nav is open
   useEffect(() => {
+    if (!activeMenu && !mobileOpen) return;
+
     const handleClickOutside = (e: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setActiveMenu(null);
+        setMobileOpen(false);
       }
     };
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  }, [activeMenu, mobileOpen]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {

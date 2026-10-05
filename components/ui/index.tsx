@@ -176,7 +176,7 @@ export function PageHero({
       <div className="container relative">
         <div className="hero-copy">
           {finalCrumbs && <Breadcrumbs items={finalCrumbs} />}
-          {eyebrow && <p className="pill">{eyebrow}</p>}
+          {/* {eyebrow && <p className="pill">{eyebrow}</p>} */}
           <h1>{title}</h1>
           {intro && <p className="hero-lede">{intro}</p>}
           {buttons && <BtnRow>{buttons}</BtnRow>}

@@ -152,7 +152,6 @@ export function Accordion({
 export * from "./Table";
 
 export function PageHero({
-  eyebrow,
   title,
   intro,
   buttons,

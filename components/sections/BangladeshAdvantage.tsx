@@ -23,7 +23,7 @@ const PILLARS = [
 
 export function BangladeshAdvantage() {
   return (
-    <section className="section section-white" id="bangladesh" aria-labelledby="bd-title">
+    <section className="section section-white perf-defer-render" id="bangladesh" aria-labelledby="bd-title">
       <div className="container">
         <div className="bd">
           <div className="stack" style={{ gap: "24px" }}>

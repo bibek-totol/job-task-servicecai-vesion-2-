@@ -3154,6 +3154,8 @@ fieldset.field {
   color: var(--muted);
   padding: 80px 0 36px;
   border-top: 1px solid var(--line);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
 }
 
 .footer-grid {
@@ -3848,4 +3850,10 @@ fieldset.field {
   .lb-bar {
     grid-row: 2;
   }
+}
+
+/* Performance Optimizations: off-screen section layout skipping */
+.perf-defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 650px;
 }

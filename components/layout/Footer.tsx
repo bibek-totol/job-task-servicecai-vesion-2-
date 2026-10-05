@@ -43,6 +43,8 @@ export function Footer() {
                 alt="Servicechai — experience reimagined"
                 width={986}
                 height={243}
+                loading="lazy"
+                decoding="async"
               />
             </Link>
             <p>

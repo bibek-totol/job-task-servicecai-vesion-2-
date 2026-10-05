@@ -11,7 +11,7 @@ const PATH_STEPS = [
 
 export function FinalCta() {
   return (
-    <section className="section section-ground" id="get-started">
+    <section className="section section-ground perf-defer-render" id="get-started">
       <div className="container">
         <div className="cta-panel">
           <p className="eyebrow">A low-risk way to start</p>

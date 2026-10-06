@@ -242,16 +242,28 @@ export function Header() {
                 onMouseEnter={() => handleMouseEnter("solutions")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
-                  type="button"
+                <Link
+                  href="/solutions"
                   aria-expanded={activeMenu === "solutions"}
                   aria-controls="menu-solutions"
-                  onClick={() => toggleDropdown("solutions")}
+                  aria-current={pathname === "/solutions" ? "page" : undefined}
+                  onClick={() => handleNavClick("/solutions")}
                   className="nav-trigger"
                 >
                   Solutions
-                  <Icon name="chevron" size={14} strokeWidth={2} />
-                </button>
+                  <span
+                    className="nav-chevron-btn"
+                    onClick={(e) => {
+                      if (typeof window !== "undefined" && window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleDropdown("solutions");
+                      }
+                    }}
+                  >
+                    <Icon name="chevron" size={14} strokeWidth={2} />
+                  </span>
+                </Link>
 
                 <div
                   id="menu-solutions"
@@ -291,16 +303,28 @@ export function Header() {
                 onMouseEnter={() => handleMouseEnter("industries")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
-                  type="button"
+                <Link
+                  href="/industries"
                   aria-expanded={activeMenu === "industries"}
                   aria-controls="menu-industries"
-                  onClick={() => toggleDropdown("industries")}
+                  aria-current={pathname === "/industries" ? "page" : undefined}
+                  onClick={() => handleNavClick("/industries")}
                   className="nav-trigger"
                 >
                   Industries
-                  <Icon name="chevron" size={14} strokeWidth={2} />
-                </button>
+                  <span
+                    className="nav-chevron-btn"
+                    onClick={(e) => {
+                      if (typeof window !== "undefined" && window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleDropdown("industries");
+                      }
+                    }}
+                  >
+                    <Icon name="chevron" size={14} strokeWidth={2} />
+                  </span>
+                </Link>
 
                 <div
                   id="menu-industries"
@@ -356,16 +380,28 @@ export function Header() {
                 onMouseEnter={() => handleMouseEnter("about")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
-                  type="button"
+                <Link
+                  href="/about"
                   aria-expanded={activeMenu === "about"}
                   aria-controls="menu-about"
-                  onClick={() => toggleDropdown("about")}
+                  aria-current={pathname === "/about" ? "page" : undefined}
+                  onClick={() => handleNavClick("/about")}
                   className="nav-trigger"
                 >
                   About
-                  <Icon name="chevron" size={14} strokeWidth={2} />
-                </button>
+                  <span
+                    className="nav-chevron-btn"
+                    onClick={(e) => {
+                      if (typeof window !== "undefined" && window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleDropdown("about");
+                      }
+                    }}
+                  >
+                    <Icon name="chevron" size={14} strokeWidth={2} />
+                  </span>
+                </Link>
 
                 <div
                   id="menu-about"

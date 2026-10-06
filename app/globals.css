@@ -460,9 +460,16 @@ div.todo {
 .nav-link:hover,
 .nav-trigger:hover,
 .nav-trigger[aria-expanded="true"],
-.nav-link[aria-current="page"] {
+.nav-link[aria-current="page"],
+.nav-trigger[aria-current="page"] {
   color: var(--white);
   background: rgba(255, 255, 255, .07);
+}
+
+.nav-chevron-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-trigger svg {
@@ -3504,6 +3511,15 @@ fieldset.field {
     padding: 0 8px;
     border-bottom: 1px solid var(--line);
     border-radius: 0;
+  }
+
+  .nav-chevron-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    margin: -10px -8px;
+    border-radius: 8px;
   }
 
   .mega,

@@ -125,6 +125,7 @@ html {
 
 body {
   margin: 0;
+  overflow-anchor: none;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);

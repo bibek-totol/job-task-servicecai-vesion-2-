@@ -9,6 +9,7 @@ import {
   Todo,
   CtaBand,
   CheckList,
+  QuickJumpNav,
 } from "@/components/ui";
 import { Icon } from "@/components/icons";
 
@@ -177,51 +178,20 @@ export default function SolutionsHubPage() {
       />
 
       {/* Quick Jump Bar */}
-      <nav
-        aria-label="Solutions navigation"
-        className="section-ground border-b border-[var(--line)] py-3 sticky top-[var(--header-h)] z-20 backdrop-blur-md bg-[rgba(17,33,54,0.92)] shadow-sm"
-      >
-        <div className="container flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs uppercase tracking-wider font-semibold text-[var(--muted)]">
-            Jump to section:
-          </span>
-          <div className="flex flex-wrap gap-2">
-            <a
-              href="#omnichannel-cx"
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
-            >
-              Omnichannel CX
-            </a>
-            <a
-              href="#agentic-ai"
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
-            >
-              Agentic AI
-            </a>
-            <a
-              href="#back-office-bpm"
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
-            >
-              Back Office & BPM
-            </a>
-            <a
-              href="#global-capability-centres"
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
-            >
-              Global Capability Centres
-            </a>
-            <a
-              href="#cx-consulting-analytics"
-              className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
-            >
-              CX Consulting
-            </a>
-          </div>
-        </div>
-      </nav>
+      <QuickJumpNav
+        label="Jump to section:"
+        ariaLabel="Solutions navigation"
+        items={[
+          { id: "omnichannel-cx", name: "Omnichannel CX" },
+          { id: "agentic-ai", name: "Agentic AI" },
+          { id: "back-office-bpm", name: "Back Office & BPM" },
+          { id: "global-capability-centres", name: "Global Capability Centres" },
+          { id: "cx-consulting-analytics", name: "CX Consulting" },
+        ]}
+      />
 
       {/* Section 1: Omnichannel CX */}
-      <section id="omnichannel-cx" className="section section-white">
+      <section id="omnichannel-cx" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Omnichannel CX management"
@@ -270,7 +240,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* Section 2: Agentic AI */}
-      <section id="agentic-ai" className="section section-ground">
+      <section id="agentic-ai" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Agentic AI voice &amp; chat"
@@ -320,7 +290,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* Section 3: Back Office & BPM */}
-      <section id="back-office-bpm" className="section section-white">
+      <section id="back-office-bpm" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Back office &amp; BPM"
@@ -376,7 +346,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* Section 4: Global Capability Centres */}
-      <section id="global-capability-centres" className="section section-ground">
+      <section id="global-capability-centres" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Global capability centres"
@@ -426,7 +396,7 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* Section 5: CX Consulting & Analytics */}
-      <section id="cx-consulting-analytics" className="section section-white">
+      <section id="cx-consulting-analytics" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="CX consulting &amp; analytics"

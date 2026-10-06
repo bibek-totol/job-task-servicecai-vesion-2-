@@ -8,6 +8,7 @@ import {
   Button,
   CtaBand,
   CertBadges,
+  QuickJumpNav,
 } from "@/components/ui";
 import { Icon } from "@/components/icons";
 
@@ -107,6 +108,14 @@ const CONTRACT_COMMITMENTS = [
   "Your right to audit, announced or unannounced",
 ];
 
+const ABOUT_SECTIONS = [
+  { id: "story", name: "Our story" },
+  { id: "leadership", name: "Leadership" },
+  { id: "governance", name: "Governance & quality" },
+  { id: "delivery-centres", name: "Delivery centres" },
+  { id: "sustainability", name: "Sustainability" },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -118,8 +127,14 @@ export default function AboutPage() {
         stats={STATS}
       />
 
+      <QuickJumpNav
+        label="Jump to section:"
+        ariaLabel="About section navigation"
+        items={ABOUT_SECTIONS}
+      />
+
       {/* Story Section */}
-      <section id="story" className="section section-white">
+      <section id="story" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <div className="split" style={{ alignItems: "start" }}>
             <SectionHead eyebrow="Our story" title="Built by operators" single />
@@ -147,7 +162,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section id="leadership" className="section section-ground">
+      <section id="leadership" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Leadership"
@@ -197,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* Governance & Quality Section */}
-      <section id="governance" className="section section-white">
+      <section id="governance" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Governance, quality and security"
@@ -243,7 +258,7 @@ export default function AboutPage() {
       </section>
 
       {/* Delivery Centres Section */}
-      <section id="delivery-centres" className="section section-ground">
+      <section id="delivery-centres" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Delivery centres"
@@ -304,7 +319,7 @@ export default function AboutPage() {
       </section>
 
       {/* Sustainability Section */}
-      <section id="sustainability" className="section section-white">
+      <section id="sustainability" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <div className="split" style={{ alignItems: "start" }}>
             <SectionHead eyebrow="Sustainability" title="Growing responsibly" single />

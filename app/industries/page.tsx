@@ -7,6 +7,7 @@ import {
   Button,
   Todo,
   CtaBand,
+  QuickJumpNav,
 } from "@/components/ui";
 import { Icon, type IconName } from "@/components/icons";
 
@@ -90,27 +91,11 @@ export default function IndustriesPage() {
       />
 
       {/* Quick Jump Bar */}
-      <nav
-        aria-label="Industries navigation"
-        className="section-ground border-b border-[var(--line)] py-3 sticky top-[var(--header-h)] z-20 backdrop-blur-md bg-[rgba(17,33,54,0.92)] shadow-sm"
-      >
-        <div className="container flex flex-wrap items-center justify-between gap-3">
-          <span className="text-xs uppercase tracking-wider font-semibold text-[var(--muted)]">
-            Jump to industry:
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {INDUSTRY_ITEMS.map((item) => (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--surface)] text-[var(--text-2)] hover:bg-[var(--surface-2)] hover:text-white transition-all"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </nav>
+      <QuickJumpNav
+        label="Jump to industry:"
+        ariaLabel="Industries navigation"
+        items={INDUSTRY_ITEMS.map((item) => ({ id: item.id, name: item.name }))}
+      />
 
       {/* Overview Grid */}
       <section className="section section-ground" style={{ paddingBottom: "40px" }}>
@@ -156,7 +141,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 1. Telecom Section */}
-      <section id="telecom" className="section section-white">
+      <section id="telecom" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Telecom"
@@ -207,7 +192,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 2. Banking & Financial Services Section */}
-      <section id="banking-financial-services" className="section section-ground">
+      <section id="banking-financial-services" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Banking &amp; Financial Services"
@@ -255,7 +240,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 3. Insurance Section */}
-      <section id="insurance" className="section section-white">
+      <section id="insurance" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Insurance"
@@ -301,7 +286,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 4. Microfinance Section */}
-      <section id="microfinance" className="section section-ground">
+      <section id="microfinance" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Microfinance"
@@ -346,7 +331,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 5. Agri-tech Section */}
-      <section id="agri-tech" className="section section-white">
+      <section id="agri-tech" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Agri-tech"
@@ -390,7 +375,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 6. Ed-tech Section */}
-      <section id="ed-tech" className="section section-ground">
+      <section id="ed-tech" className="section section-ground scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="Ed-tech"
@@ -435,7 +420,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* 7. E-commerce Section */}
-      <section id="e-commerce" className="section section-white">
+      <section id="e-commerce" className="section section-white scroll-mt-[135px]">
         <div className="container">
           <SectionHead
             eyebrow="E-commerce"

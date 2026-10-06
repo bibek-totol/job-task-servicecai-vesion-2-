@@ -130,6 +130,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent browser from automatically restoring mismatched scroll offsets on SPA navigations
+  useEffect(() => {
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   // Close menus on route change
   const [prevPathname, setPrevPathname] = useState(pathname);
   if (prevPathname !== pathname) {
@@ -137,6 +144,18 @@ export function Header() {
     setActiveMenu(null);
     setMobileOpen(false);
   }
+
+  // Ensure redirecting/navigating to a main page starts at the very top (0, 0) without downward animation
+  useEffect(() => {
+    if (typeof window !== "undefined" && !window.location.hash) {
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      const timer = requestAnimationFrame(() => {
+        document.documentElement.style.scrollBehavior = "";
+      });
+      return () => cancelAnimationFrame(timer);
+    }
+  }, [pathname]);
 
   // Keyboard accessibility (Escape key closes open menus)
   useEffect(() => {
@@ -208,6 +227,14 @@ export function Header() {
           }
         }, 50);
       }
+    } else {
+      if (typeof window !== "undefined") {
+        document.documentElement.style.scrollBehavior = "auto";
+        window.scrollTo(0, 0);
+        requestAnimationFrame(() => {
+          document.documentElement.style.scrollBehavior = "";
+        });
+      }
     }
   };
 
@@ -223,7 +250,7 @@ export function Header() {
       >
         <div className="container header-inner">
           {/* Brand Logo */}
-          <Link href="/" className="brand" aria-label="Servicechai home" onClick={() => handleNavClick("/")}>
+          <Link href="/" scroll={false} className="brand" aria-label="Servicechai home" onClick={() => handleNavClick("/")}>
             <Image
               src="/assets/img/sc logo.svg"
               alt="Servicechai — experience reimagined"
@@ -244,6 +271,7 @@ export function Header() {
               >
                 <Link
                   href="/solutions"
+                  scroll={false}
                   aria-expanded={activeMenu === "solutions"}
                   aria-controls="menu-solutions"
                   aria-current={pathname === "/solutions" ? "page" : undefined}
@@ -289,7 +317,7 @@ export function Header() {
                   </div>
 
                   <div className="mega-foot">
-                    <Link className="link-arrow" href="/solutions" onClick={() => handleNavClick("/solutions")}>
+                    <Link className="link-arrow" href="/solutions" scroll={false} onClick={() => handleNavClick("/solutions")}>
                       All solutions
                       <Icon name="arrow" size={16} strokeWidth={2} />
                     </Link>
@@ -305,6 +333,7 @@ export function Header() {
               >
                 <Link
                   href="/industries"
+                  scroll={false}
                   aria-expanded={activeMenu === "industries"}
                   aria-controls="menu-industries"
                   aria-current={pathname === "/industries" ? "page" : undefined}
@@ -343,7 +372,7 @@ export function Header() {
                   </ul>
 
                   <div className="mega-foot">
-                    <Link className="link-arrow" href="/contact" onClick={() => handleNavClick("/contact")}>
+                    <Link className="link-arrow" href="/contact" scroll={false} onClick={() => handleNavClick("/contact")}>
                       Don’t see your industry? Talk to us
                       <Icon name="arrow" size={16} strokeWidth={2} />
                     </Link>
@@ -355,6 +384,7 @@ export function Header() {
               <li>
                 <Link
                   href="/why-bangladesh"
+                  scroll={false}
                   className="nav-link"
                   aria-current={pathname === "/why-bangladesh" ? "page" : undefined}
                   onClick={() => handleNavClick("/why-bangladesh")}
@@ -366,6 +396,7 @@ export function Header() {
               <li>
                 <Link
                   href="/solutions/agentic-ai"
+                  scroll={false}
                   className="nav-link"
                   aria-current={pathname === "/solutions/agentic-ai" ? "page" : undefined}
                   onClick={() => handleNavClick("/solutions/agentic-ai")}
@@ -382,6 +413,7 @@ export function Header() {
               >
                 <Link
                   href="/about"
+                  scroll={false}
                   aria-expanded={activeMenu === "about"}
                   aria-controls="menu-about"
                   aria-current={pathname === "/about" ? "page" : undefined}
@@ -424,6 +456,7 @@ export function Header() {
               <li>
                 <Link
                   href="/careers"
+                  scroll={false}
                   className="nav-link"
                   aria-current={pathname === "/careers" ? "page" : undefined}
                   onClick={() => handleNavClick("/careers")}
@@ -435,6 +468,7 @@ export function Header() {
               <li className="mobile-only">
                 <Link
                   href="/investors"
+                  scroll={false}
                   className="nav-link"
                   aria-current={pathname === "/investors" ? "page" : undefined}
                   onClick={() => handleNavClick("/investors")}
@@ -444,7 +478,7 @@ export function Header() {
               </li>
 
               <li className="mobile-only mobile-cta">
-                <Link className="btn btn-mint" href="/contact/book-a-call" onClick={() => handleNavClick("/contact/book-a-call")}>
+                <Link className="btn btn-mint" href="/contact/book-a-call" scroll={false} onClick={() => handleNavClick("/contact/book-a-call")}>
                   Book a call
                 </Link>
               </li>
@@ -455,6 +489,7 @@ export function Header() {
           <div className="header-actions">
             <Link
               href="/investors"
+              scroll={false}
               className="nav-link"
               aria-current={pathname === "/investors" ? "page" : undefined}
               onClick={() => handleNavClick("/investors")}
@@ -462,7 +497,7 @@ export function Header() {
               Investors
             </Link>
 
-            <Link className="btn btn-mint btn-sm" href="/contact/book-a-call" onClick={() => handleNavClick("/contact/book-a-call")}>
+            <Link className="btn btn-mint btn-sm" href="/contact/book-a-call" scroll={false} onClick={() => handleNavClick("/contact/book-a-call")}>
               Book a call
             </Link>
 

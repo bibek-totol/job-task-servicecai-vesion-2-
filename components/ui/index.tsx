@@ -2,6 +2,7 @@ export * from "./Button";
 export * from "./Card";
 export * from "./SectionHead";
 export * from "./Todo";
+export * from "./QuickJumpNav";
 
 import React from "react";
 import Link from "next/link";

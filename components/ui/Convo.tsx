@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { Icon } from "@/components/icons";
 
-export function Convo() {
+export function Convo({ className = "" }: { className?: string }) {
   const convoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export function Convo() {
   return (
     <div
       ref={convoRef}
-      className="convo"
+      className={`convo ${className}`.trim()}
       role="img"
       aria-label="Illustrative conversation: an AI agent handles a billing question, then hands off to a human billing specialist with full context"
     >

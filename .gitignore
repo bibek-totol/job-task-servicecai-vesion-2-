@@ -76,3 +76,7 @@ $RECYCLE.BIN/
 *.swp
 *.swo
 *~
+
+# Playwright MCP artifacts
+.playwright-mcp/
+

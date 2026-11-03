@@ -20,7 +20,7 @@ const SOLUTIONS: NavSubItem[] = [
   },
   {
     title: "Agentic AI voice & chat",
-    desc: "AI agents in 75 languages, with warm hand-off to a human.",
+    desc: "AI agents in 75+ languages, with warm hand-off to a human.",
     href: "/solutions#agentic-ai",
   },
   {

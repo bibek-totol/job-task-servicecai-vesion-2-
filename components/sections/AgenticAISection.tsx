@@ -20,7 +20,7 @@ const AI_FEATURES: { icon: IconName; title: string; desc: string }[] = [
   },
   {
     icon: "languages",
-    title: "75 languages",
+    title: "75+ languages",
     desc: "One voice and chat platform for every market you serve. Add a language without re-staffing a queue.",
   },
   {
@@ -43,7 +43,7 @@ export function AgenticAISection() {
             Our humanised AI agents answer first on high-volume, repetitive
             intents such as billing, order status, document chasers and surveys,
             and hand over to a trained human the moment a conversation needs
-            judgement. Full context travels with the customer, so nobody
+            human intervention. Full context travels with the customer, so nobody
             repeats themselves.
           </p>
           <div className="grid grid-2 tint" style={{ gap: "24px 32px", paddingTop: "8px" }}>

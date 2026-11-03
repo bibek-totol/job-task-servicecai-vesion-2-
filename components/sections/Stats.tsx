@@ -6,7 +6,7 @@ const STAT_ITEMS = [
   { color: "c-mint", value: "500+", label: "professionals" },
   { color: "c-sky", value: "30,000", label: "sq ft across two geo-redundant centres in Dhaka and Chattogram" },
   { color: "c-amber", value: "150+", label: "years of combined leadership experience" },
-  { color: "c-violet", value: "75", label: "languages on our agentic AI voice and chat platform" },
+  { color: "c-violet", value: "75+", label: "languages on our agentic AI voice and chat platform" },
 ];
 
 const CERTS = ["ISO 9001:2015", "COPC compliant", "Six Sigma certified", "SBTi approved"];

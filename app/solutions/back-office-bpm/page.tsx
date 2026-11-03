@@ -47,8 +47,8 @@ export default function BackOfficeBpmPage() {
     <>
       <PageHero
         eyebrow="Back office & BPM"
-        title="The engine behind the customer experience"
-        intro="Customer care is only as fast as the back-office process behind it. We run the operational and administrative tasks that keep customer journeys moving, to SLA and audited to your standard."
+        title="The engine behind customer experience"
+        intro="Your front line is only as fast as your back office. We run the back-office work that keeps customer journeys moving, to your SLA and as per your audit standards."
         crumbs={[
           { label: 'Home', href: '/' },
           { label: 'Solutions', href: '/solutions' },

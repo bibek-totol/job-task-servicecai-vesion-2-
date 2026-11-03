@@ -100,9 +100,7 @@ export default function OmnichannelCxPage() {
             />
             <div className="stack">
               <CheckList items={WHAT_WE_RUN} />
-              <p className="mt-4">
-                <Todo>Add any proprietary queue management frameworks or tools</Todo>
-              </p>
+
             </div>
           </div>
         </div>
@@ -114,7 +112,7 @@ export default function OmnichannelCxPage() {
           <SectionHead
             eyebrow="Quality"
             title="Built to be audited"
-            lede="You don't take quality on trust. We run the same standard you audit anywhere else."
+            lede="You don't take quality on trust. We run the same standard and you audit from anywhere."
             single
           />
           <div className="grid grid-2">

@@ -13,11 +13,12 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <FollowTheSunSection />
       <Stats />
       <SolutionsSection />
       <AgenticAISection />
       <IndustriesSection />
-      <FollowTheSunSection />
+
       <BangladeshAdvantage />
       <GovernanceSection />
       <FinalCta />

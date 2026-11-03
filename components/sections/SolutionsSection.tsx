@@ -13,21 +13,21 @@ interface SolutionItem {
 const SOLUTIONS: SolutionItem[] = [
   {
     title: "Omnichannel CX management",
-    desc: "Inbound and outbound voice, chat, email, social and messaging: one team, one knowledge base and one quality standard behind every channel.",
+    desc: "Every channel. One team. One standard. Your customers switch channels, your service shouldn’t. One team runs voice, chat, email, social and messaging through a single and unified  standard.",
     icon: "headset",
     linkText: "Explore CX management",
     href: "/solutions/omnichannel-cx",
   },
   {
     title: "Agentic AI voice & chat",
-    desc: "Humanised AI agents take first contact on high-volume intents in 75 languages, then hand off warm to a trained human on the same session.",
+    desc: "Humanised AI agents take first contact on high-volume intents in 75+ languages, then hand off warm to a trained human on the same session.",
     icon: "sparkle",
     linkText: "Explore agentic AI",
     href: "/solutions/agentic-ai",
   },
   {
     title: "Back office & BPM",
-    desc: "KYC and document verification, provisioning, content moderation, finance, payroll and RPA, run to SLA and audited to your standard.",
+    desc: "KYC, provisioning, moderation, finance and payroll, automated where it pays and run to your SLA.",
     icon: "layers",
     linkText: "Explore back office",
     href: "/solutions/back-office-bpm",

@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Agentic AI Voice & Chat Agents | Servicechai",
   description:
-    "Humanised AI voice and chat agents in 75 languages that resolve high-volume intents and hand off warm to trained human agents — no repeats.",
+    "Humanised AI voice and chat agents in 75+ languages that resolve high-volume intents and hand off warm to trained human agents — no repeats.",
 };
 
 const HOW_IT_WORKS = [
@@ -45,7 +45,7 @@ const USE_CASES = [
 
 const WHY_AI_HUMAN = [
   "Lower cost per contact on repetitive intents",
-  "Instant answers at any hour, in 75 languages",
+  "Instant answers at any hour, in 75+ languages",
   "Your agents spend their time on conversations that need judgement",
   "One partner accountable for both the AI and the people",
 ];
@@ -61,7 +61,7 @@ export default function AgenticAiPage() {
         ]}
         eyebrow="Agentic AI voice & chat"
         title="AI-augmented, not AI-only"
-        intro="Our humanised AI agents take first contact on high-volume, repetitive intents. The moment a conversation needs judgement, they hand over to a trained human on the same session, with full context."
+        intro="Our humanised AI agents take first contact on high-volume, repetitive intents. The moment a conversation needs human intervention, they hand over to a trained human on the same session, with full context."
         buttons={[
           <Button key="demo" href="/solutions/agentic-ai/demo" variant="mint" arrow>
             Book an AI demo
@@ -106,7 +106,7 @@ export default function AgenticAiPage() {
               />
               <Feature
                 iconName="languages"
-                title="75 languages"
+                title="75+ languages"
                 text="One voice and chat platform for every market you serve."
               />
               <Feature

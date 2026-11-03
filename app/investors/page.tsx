@@ -63,7 +63,7 @@ export default function InvestorsPage() {
             />
             <Card
               title="A structural cost advantage"
-              text="Up to 30% below comparable delivery in India and the Philippines."
+              text="Up to 30% below comparable delivery centres in the region."
               iconName="chart"
             />
             <Card
@@ -73,7 +73,7 @@ export default function InvestorsPage() {
             />
             <Card
               title="Built for where CX is heading"
-              text="Agentic voice and chat in 75 languages, delivered alongside trained human teams."
+              text="Agentic voice and chat in 75+ languages, delivered alongside trained human teams."
               iconName="sparkle"
             />
           </div>

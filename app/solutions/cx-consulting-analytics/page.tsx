@@ -72,7 +72,7 @@ export default function CxConsultingAnalyticsPage() {
             />
             <Card
               title="Translation"
-              text={<Todo>Confirm scope: which content and which languages</Todo>}
+              text="Your customers speak dozens of languages. Your agents don’t need to. Our Agentic AI translates each conversation as it happens, so a trained agent can resolve any query with no handoff to a language specialist."
               iconName="languages"
             />
           </div>

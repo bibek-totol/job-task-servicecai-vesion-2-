@@ -73,7 +73,7 @@ const WHY_FAQ = [
       <>
         <p>
           Our agents serve customers in English and Bangla. Our agentic AI platform
-          covers 75 languages.
+          covers 75+ languages.
         </p>
         <p>
           <Todo>Add any other languages your human agents cover</Todo>

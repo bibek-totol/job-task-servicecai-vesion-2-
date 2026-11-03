@@ -54,7 +54,7 @@ const AI_FEATURES = [
   },
   {
     icon: "languages" as const,
-    title: "75 languages",
+    title: "75+ languages",
     desc: "One voice and chat platform for every market you serve. Add a language without re-staffing.",
   },
   {
@@ -196,7 +196,8 @@ export default function SolutionsHubPage() {
           <SectionHead
             eyebrow="Omnichannel CX management"
             title="Every channel. One team. One standard."
-            lede="Inbound and outbound voice, chat, email, social and messaging: one team, one knowledge base and one quality standard behind every channel."
+            lede="Every channel. One team. One standard.
+Your customers switch channels, your service shouldn’t. One team runs voice, chat, email, social and messaging through a single and unified  standard."
           />
 
           <div className="grid grid-3 mt-12">
@@ -245,7 +246,7 @@ export default function SolutionsHubPage() {
           <SectionHead
             eyebrow="Agentic AI voice &amp; chat"
             title="AI-augmented, not AI-only"
-            lede="Our humanised AI agents answer first on high-volume, repetitive intents in 75 languages, and hand over to a trained human the moment a conversation needs judgement. Full context travels with the customer."
+            lede="Our humanised AI agents answer first on high-volume, repetitive intents in 75+ languages, and hand over to a trained human the moment a conversation needs human intervention. Full context travels with the customer."
           />
 
           <div className="grid grid-4 mt-12">
@@ -478,12 +479,7 @@ export default function SolutionsHubPage() {
             single
           />
           <Steps items={WAYS_TO_WORK} variant="three" />
-          <p className="mt-40">
-            <Todo>
-              Confirm the pricing models you offer — per FTE, per productive hour, per
-              transaction or outcome-based
-            </Todo>
-          </p>
+
         </div>
       </section>
 

@@ -20,14 +20,7 @@ export default function GlobalCapabilityCentresPage() {
     { title: 'Design', text: 'Scope, roles, location and the business case, agreed with you.' },
     { title: 'Build', text: 'Seats ready in Dhaka or Chattogram, plus hiring, training, systems and security.' },
     { title: 'Operate', text: 'We run it to your KPIs, under your brand and your governance.' },
-    {
-      title: 'Transfer',
-      text: (
-        <Todo>
-          Move the centre and team to your own entity when you’re ready — keep this step only if you offer it
-        </Todo>
-      ),
-    },
+
   ];
 
   return (
@@ -62,11 +55,9 @@ export default function GlobalCapabilityCentresPage() {
             />
             <div className="stack">
               <p className="lede">
-                GCCs began as a way to lower costs. The best ones now do much more: they help the business adopt new technology faster, create value across functions and support growth.
+                The best GCCs don’t just cut costs. They own processes, build analytics and AI capability, and become a strategic arm of your business. Servicechai lets you build one for up to 30% less than comparable delivery centers in the region with zero quality of service trade-off. Fitted-out, geo-redundant centres in Dhaka and Chattogram, with agentic AI built in. Led by a team with 150+ years of combined experience.
               </p>
-              <p className="lede">
-                They typically run customer service, IT, finance, analytics and R&amp;D.
-              </p>
+
             </div>
           </div>
         </div>
@@ -110,7 +101,7 @@ export default function GlobalCapabilityCentresPage() {
             />
             <Card
               title="Lower cost"
-              text="Up to 30% below comparable delivery in India and the Philippines."
+              text="Up to 30% below comparable delivery centres in the region."
               iconName="chart"
             />
           </div>

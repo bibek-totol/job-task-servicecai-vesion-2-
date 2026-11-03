@@ -57,8 +57,8 @@ export function SolutionsSection() {
       <div className="container">
         <div className="section-head row">
           <div className="title">
-            <p className="eyebrow sky">What we run for you</p>
-            <h2>Five ways to scale CX</h2>
+            {/* <p className="eyebrow sky">What we run for you</p> */}
+            <h2>What we run for you</h2>
           </div>
           <LinkArrow href="/solutions" className="hover:!text-white transition-colors">
             All solutions

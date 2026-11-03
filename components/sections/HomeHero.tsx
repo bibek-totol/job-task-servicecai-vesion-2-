@@ -11,10 +11,7 @@ export function HomeHero() {
             Where brands lead, <span className="grad-text">we power.</span>
           </h1>
           <p className="hero-lede">
-            Omnichannel customer experience, agentic AI and back-office
-            operations that run while your markets sleep. COPC-compliant,
-            attrition around 10%, and up to 30% lower cost than India or the
-            Philippines.
+            Local depth, global standards: CX, Agentic AI, Automation and Back-Office capability centres that run even while your markets sleep.
           </p>
           <BtnRow>
             <Button href="/contact/book-a-call" variant="mint" arrow>

@@ -3,9 +3,9 @@ import { Counter } from "@/components/ui";
 import { Icon } from "@/components/icons";
 
 const STAT_ITEMS = [
-  { color: "c-mint", value: "500+", label: "CX professionals on our floors today" },
+  { color: "c-mint", value: "500+", label: "professionals" },
   { color: "c-sky", value: "30,000", label: "sq ft across two geo-redundant centres in Dhaka and Chattogram" },
-  { color: "c-amber", value: "140+", label: "years of combined leadership experience" },
+  { color: "c-amber", value: "150+", label: "years of combined leadership experience" },
   { color: "c-violet", value: "75", label: "languages on our agentic AI voice and chat platform" },
 ];
 

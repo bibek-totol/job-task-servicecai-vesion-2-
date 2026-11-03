@@ -116,7 +116,7 @@ export default function GlobalCapabilityCentresPage() {
             title="Design, build, operate"
             single
           />
-          <Steps items={stepsData} />
+          <Steps items={stepsData} variant="three" centered />
         </div>
       </section>
 

@@ -69,7 +69,7 @@ const LEADERS_DELIVERY = [
     initials: "IS",
     name: "Md. Imran Shahriar",
     role: "General Manager, IT",
-    bio: "IT leader with 16+ years of experience in IT infrastructure, network security,DC operations, and digital transformation.Formerly associated with Qubee, Samsung C&T Corporation, Bashundhara Group, and Genex Infosys Limited.  Expert in enterprise IT leadership, infrastructure strategy, and digital transformation.",
+    bio: "16+ years in IT infrastructure, network security, DC operations and digital transformation. Formerly Qubee, Samsung C&T, Bashundhara Group and Genex Infosys.",
   },
   {
     initials: "RR",
@@ -181,7 +181,7 @@ export default function AboutPage() {
                 </div>
                 <h3>{l.name}</h3>
                 <p className="role">{l.role}</p>
-                <p>{l.bio}</p>
+                <p className="bio">{l.bio}</p>
               </article>
             ))}
           </div>
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 </div>
                 <h3>{l.name}</h3>
                 <p className="role">{l.role}</p>
-                <p>{l.bio}</p>
+                <p className="bio">{l.bio}</p>
               </article>
             ))}
           </div>

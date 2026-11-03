@@ -100,23 +100,37 @@ export function Steps({
   items,
   variant = "default",
   columns,
+  centered = false,
   className = "",
 }: {
   items: StepItem[];
   variant?: "default" | "three" | "five";
   columns?: number;
+  centered?: boolean;
   className?: string;
 }) {
+  const effectiveCols =
+    columns ??
+    (variant === "three"
+      ? 3
+      : variant === "five"
+        ? 5
+        : items.length === 3
+          ? 3
+          : items.length === 5
+            ? 5
+            : 4);
   const colVariant =
-    columns === 3
+    effectiveCols === 3
       ? "three"
-      : columns === 5
+      : effectiveCols === 5
         ? "five"
         : variant !== "default"
           ? variant
           : "";
+  const centerVariant = centered ? "centered" : "";
   return (
-    <ol className={`steps ${colVariant} ${className}`.trim()}>
+    <ol className={`steps ${colVariant} ${centerVariant} ${className}`.trim()}>
       {items.map((step, idx) => (
         <li key={idx}>
           {step.when && <span className="when">{step.when}</span>}

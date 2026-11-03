@@ -2484,6 +2484,8 @@ a.card:hover {
 
 .steps li::before {
   content: counter(step);
+  position: relative;
+  z-index: 1;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -2532,6 +2534,49 @@ a.card:hover {
 
 .steps.three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.steps.centered,
+.steps.text-center {
+  text-align: center;
+}
+
+.steps.centered li,
+.steps.text-center li {
+  align-items: center;
+  text-align: center;
+}
+
+.steps.centered li::before,
+.steps.text-center li::before {
+  margin: 0 auto;
+}
+
+.steps.centered h3,
+.steps.text-center h3,
+.steps.centered p,
+.steps.text-center p,
+.steps.centered .when,
+.steps.text-center .when {
+  text-align: center;
+}
+
+.steps.centered.three::before,
+.steps.text-center.three::before {
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+}
+
+.steps.centered.five::before,
+.steps.text-center.five::before {
+  left: 10%;
+  right: 10%;
+}
+
+.steps.centered:not(.three):not(.five)::before,
+.steps.text-center:not(.three):not(.five)::before {
+  left: 12.5%;
+  right: 12.5%;
 }
 
 /* ---------- Tables ---------- */
@@ -3294,6 +3339,15 @@ fieldset.field {
   font-weight: 700;
   color: var(--mint);
   margin-top: -8px;
+}
+
+.person p:not(.role),
+.person .bio {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: left;
+  text-wrap: pretty;
 }
 
 .tag {

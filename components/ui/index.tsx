@@ -228,9 +228,8 @@ export { FollowTheSun } from "./FollowTheSun";
 /* ---------- Leaderboard Component (Attrition) ---------- */
 export const LEADERBOARD_DATA = [
   { rank: "01", name: "Servicechai", sub: "Bangladesh", value: "~10%", width: 22, ours: true },
-  { rank: "02", name: "India", sub: "BPM industry", value: "25–30%", width: 67, ours: false },
-  { rank: "03", name: "Philippines", sub: "Contact centre industry", value: "31%", width: 69, ours: false },
-  { rank: "04", name: "Global benchmark", sub: "Contact centres worldwide", value: "30–45%", width: 100, ours: false },
+  { rank: "02", name: "Regional benchmark", sub: "Regional BPM industry", value: "25-30%", width: 69, ours: false },
+  { rank: "03", name: "Global benchmark", sub: "Contact centres worldwide", value: "30–45%", width: 100, ours: false },
 ];
 
 export function Leaderboard({ showCopy = true }: { showCopy?: boolean }) {

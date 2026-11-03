@@ -32,20 +32,13 @@ export function BangladeshAdvantage() {
               Same service standard. <span className="soft">Lower cost. Teams that stay.</span>
             </h2>
             <p className="lede">
-              India and the Philippines built the offshore CX industry. Today,
-              rising wages and attrition of around 30% a year eat into the savings
-              they were chosen for. Bangladesh is the next move: 885,000
-              university graduates were looking for work in 2024, and our people
-              stay long enough to master your product.
+              APAC’s established hubs with rising wages and attrition of around 30% a year eat into the savings they were chosen for. Bangladesh is the region’s next move: ~990,000 university graduates were looking for work in 2024, and our people stay long enough to master your product.
             </p>
             <div className="cost-duo">
+
               <div>
-                <strong>~25%</strong>
-                <span>lower cost than India</span>
-              </div>
-              <div>
-                <strong>28–30%</strong>
-                <span>lower cost than the Philippines</span>
+                <strong>25–30%</strong>
+                <span>lower cost than the region</span>
               </div>
             </div>
             <BtnRow>

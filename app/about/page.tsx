@@ -69,7 +69,7 @@ const LEADERS_DELIVERY = [
     initials: "IS",
     name: "Md. Imran Shahriar",
     role: "General Manager, IT",
-    bio: "Over 16 years of experience in IT infrastructure, network security, data center operations, and digital transformation. Previously associated with leading organizations including Augere Wireless Broadband Bangladesh Limited(Qubee), Samsung C&T Corporation, Bashundhara Group, and Genex Infosys Limited, bringing extensive expertise in managing enterprise IT operations, infrastructure strategy, and technology-driven business transformation.",
+    bio: "IT leader with 16+ years of experience in IT infrastructure, network security,DC operations, and digital transformation.Formerly associated with Qubee, Samsung C&T Corporation, Bashundhara Group, and Genex Infosys Limited.  Expert in enterprise IT leadership, infrastructure strategy, and digital transformation.",
   },
   {
     initials: "RR",
